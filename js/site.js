@@ -1,3 +1,1 @@
-document.getElementById("*").addEventListener("click", function () {
-    alert(1);
-});
+console.log("Ready!!");
