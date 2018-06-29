@@ -5,35 +5,37 @@ var gulp = require("gulp"),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require("gulp-rename");
 
+var config = require('./gulpfile-config.json');
+
 function swallowError (error) {
     console.log(error.toString());
     this.emit('end');
 }
 
 gulp.task("sass", function () {
-    gulp.src("./sass/site.scss")
+    gulp.src(config.paths.sass + "/site.scss")
         .pipe(sass({outputStyle: "expanded"})).on('error', swallowError)
-        .pipe(autoprefixer("> 0%"))
-        .pipe(gulp.dest("css"));
+        .pipe(autoprefixer(config.autoprefixerBrowsers))
+        .pipe(gulp.dest(config.paths.css));
 });
 
 gulp.task('minify-css', function () {
-    gulp.src('css/site.css')
+    gulp.src(config.paths.css + '/site.css')
         .pipe(cleanCSS({compatibility: 'ie8'})).on('error', swallowError)
         .pipe(rename({
             suffix: '.min'
         })).on('error', swallowError)
-        .pipe(autoprefixer("> 0%"))
-        .pipe(gulp.dest('css'));
+        .pipe(autoprefixer(config.autoprefixerBrowsers))
+        .pipe(gulp.dest(config.paths.css));
 });
 
 gulp.task("js", function () {
-    gulp.src('./js/site.js')
+    gulp.src(config.paths.js + '/site.js')
         .pipe(uglify()).on('error', swallowError)
         .pipe(rename({
             suffix: '.min'
         })).on('error', swallowError)
-        .pipe(gulp.dest('./js/'));
+        .pipe(gulp.dest(config.paths.js));
 });
 
 gulp.task('default', function () {

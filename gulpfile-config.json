@@ -1,0 +1,10 @@
+{
+  "paths" : {
+    "css" : "css",
+    "sass" : "sass",
+    "js" : "js"
+  },
+  "autoprefixerBrowsers": [
+    "> 0%"
+  ]
+}
