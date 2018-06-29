@@ -1,5 +1,5 @@
-# Gulp
-They compile and compress the Sass files. It compresses your Javascript files.
+# Gulp Starter Pack
+This package compiles and compresses SASS files. Also reduce your JavaScript files.
 
 ### Install
 ```
