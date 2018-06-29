@@ -1,7 +1,11 @@
 # Gulp
 They compile and compress the Sass files. It compresses your Javascript files.
 
-## Install
+### Install
 ```
 npm i
+```
+### Run
+```
+gulp
 ```
