@@ -2,25 +2,7 @@
 
 body {
 
-   background: $color;
    padding: 0;
    margin: 0;
-
-}
-
-div {
-
-   width: 200px;
-   height: 200px;
-   background: white;
-   border-radius: 15px;
-   margin: 20px;
-   transition: all .3s;
-
-   &:hover {
-
-      transform: scale(1.1);
-
-   }
 
 }
