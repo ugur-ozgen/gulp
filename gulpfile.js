@@ -40,7 +40,7 @@ gulp.task("js", function () {
 
 gulp.task('default', function () {
 
-    gulp.watch(config.paths.scss + "/*.scss", ["sass"]);
+    gulp.watch(config.paths.sass + "/*.scss", ["sass"]);
 
     gulp.watch(config.paths.css + "/*.css", ["minify-css"]);
 
