@@ -5,7 +5,16 @@ var gulp = require("gulp"),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require("gulp-rename");
 
-var config = require('./gulpfile-config.json');
+var config = {
+  "paths" : {
+    "css" : "css",
+    "sass" : "sass",
+    "js" : "js"
+  },
+  "autoprefixerBrowsers": [
+    "> 0%"
+  ]
+};
 
 function swallowError (error) {
     console.log(error.toString());
@@ -40,7 +49,7 @@ gulp.task("js", function () {
 
 gulp.task('default', function () {
 
-    gulp.watch(config.paths.sass + "/*.scss", ["sass"]);
+    gulp.watch(config.paths.sass + "/**", ["sass"]);
 
     gulp.watch(config.paths.css + "/*.css", ["minify-css"]);
 
